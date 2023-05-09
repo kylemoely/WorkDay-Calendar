@@ -3,6 +3,10 @@
 // in the html.
  
 let dayEl = $("#currentDay");
+let timeBlocks = document.querySelectorAll(".time-block");
+console.log(timeBlocks)
+console.log(dayjs());
+
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -17,7 +21,20 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+  for(let x=0; x<timeBlocks.length;x++){
+    let time = dayjs().$H;
+    let timeBlockTime = Number(timeBlocks[x].attributes[1].nodeValue);
+
+    if(timeBlockTime<time){
+      timeBlocks[x].className = "row time-block past";
+      console.log("past");
+    } else if(timeBlockTime===time){
+      timeBlocks[x].className = "row time-block present";
+    } else {
+      timeBlocks[x].className = "row time-block future";
+    }
+
+  }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
