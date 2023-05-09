@@ -8,6 +8,12 @@ header{
   text-align:center;
 }
 
+#clearBtn{
+  border-radius: 5px;
+  background-color:#3d0a94; 
+  color: white;
+}
+
 textarea {
   background: transparent;
   border: none;

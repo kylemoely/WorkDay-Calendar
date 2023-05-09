@@ -5,6 +5,7 @@ let events = {...localStorage};
 let buttons = document.querySelectorAll(".saveBtn");
 let dayEl = $("#currentDay");
 let timeBlocks = document.querySelectorAll(".time-block");
+let clearBtn = $("#clearBtn");
 
 const saveEvent = (event) => {
   let block = event.target.parentElement;
@@ -22,6 +23,11 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
+  clearBtn.on("click", () => {
+    localStorage.clear();
+    location.reload();
+  });
+
   for(let x=0;x<buttons.length;x++){
     buttons[x].addEventListener("click", saveEvent);
   }
