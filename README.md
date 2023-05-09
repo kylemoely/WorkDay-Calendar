@@ -1,6 +1,8 @@
 
   # Workday Calendar     
-         
+
+   [Link to website](https://kylemoely.github.io/WorkDay-Calendar/)      
+  !["screenshot"](./Assets/Capture.PNG)
   ## Description    
   This is a webpage that hosts a daily calendar in which the user may track their events for the day.    
       
