@@ -8,7 +8,11 @@ let timeBlocks = document.querySelectorAll(".time-block");
 
 const saveEvent = (event) => {
   let block = event.target.parentElement;
-  localStorage.setItem(block.id, block.children[1].value);
+  if(block.children[1]===undefined){
+    return;
+  }
+    localStorage.setItem(block.id, block.children[1].value);
+  
 }
 
 $(function () {
